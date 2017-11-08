@@ -40,7 +40,7 @@ public class HttpUtils {
     }
 
     /**
-     *  通过自定义检验有效证书 请求网址
+     *  通过自定义X509Certificate,检验有效证书 请求网址
      * @param context
      * @param path
      * @param callBack
@@ -85,6 +85,12 @@ public class HttpUtils {
         }).start();
     }
 
+    /**
+     * 通过系统拿到TrustManager,检验有效证书，请求网址
+     * @param context
+     * @param path
+     * @param callBack
+     */
     public void Request2(final Context context,final String path,final HttpRequestCallBack callBack)  {
         new Thread(new Runnable() {
             @Override
